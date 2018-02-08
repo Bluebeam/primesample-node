@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  div.page-header
+    h1 Markup & Finish
+  p The Studio Session #[strong #{sessionName}] has been created with ID #[strong #{sessionId}]. You may now go into Revu and markup your file. Click 'Finish Session' when you are ready.
+  div.panel
+    div.panel-body
+      small.text-muted SESSION LINK
+      div.well
+        a(href='https://studio.bluebeam.com/join.html?ID=' + sessionId, target='_blank') #{sessionName}
+  form(action='/finish' method="POST")
+    div.form-group
+      input(type='hidden' name='sessionId' value= sessionId)
+      input(type='hidden' name='projectId' value= projectId)
+      input(type='hidden' name='fileSessionId' value= fileSessionId)
+      input(type='hidden' name='fileProjectId' value= fileProjectId)
+      input.btn.btn-primary(type='submit' value='Finish Session')

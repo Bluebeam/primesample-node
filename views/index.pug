@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  div.page-header
+    h1 Create Studio Session
+  p You are authorized as #{userId}
+  form(action="/create" method="POST" enctype="multipart/form-data")
+    div.form-group
+      label(for="selectProject") Select Studio Project
+      select.form-control#selectProject(name="project" required)
+        each val in projects
+          option(value=val.Id) #{val.Name}
+    div.form-group
+      label(for="sessionName") Name Session
+      input.form-control#sessionName(type="text" name="session" placeholder="Session Name" required)
+    div.form-group
+      label(for="sessionFile") Browse for the PDF file to upload into the new Session
+      div.input-group#sessionFile
+        label.input-group-btn
+          span.btn.btn-file.btn-default Browse&hellip;
+            input(name="sessionFile" type="file" accept=".pdf" required)
+        input.form-control(type="text" readonly)
+    div.form-group
+      input.btn.btn-primary(type="submit" value="Create Session")
+
+  script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js")
+  script(src="js/main.js")

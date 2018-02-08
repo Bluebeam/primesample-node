@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  div.page-header
+    h1 Complete
+  p Your Studio Session is now finished and the file has been checked back into the Project. Also, a job has been created to flatten the file. Additionally, a shareable link has been generated to the file.
+  div.panel
+    div.panel-body
+      small.text-muted SHARED LINK
+      div.well
+        a(href= projectLink, target='_blank') #{projectLink}
+  form(action='/login' method="GET")
+    div.form-group
+      input.btn.btn-primary(type='submit' value='Start Over')

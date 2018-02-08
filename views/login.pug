@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  .page-header
+    h1 Authorize
+  p Click authorize to initiate the Three-legged OAuth Flow with the Bluebeam authorization service.
+  form(action="oauth")
+    input(class='btn btn-primary',type='submit', value='Authorize')
