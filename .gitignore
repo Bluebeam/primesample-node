@@ -1,0 +1,8 @@
+.tscache
+.baseDir.ts
+dist
+node_modules
+users
+sessions
+*.zip
+config.json
