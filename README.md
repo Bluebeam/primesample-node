@@ -1,4 +1,4 @@
-# Session Round Tripper
+# Studio Prime Sample - Node
 
 This is a sample application showcasing the Studio Prime API using TypeScript, Node, Express and LevelDB. 
 
@@ -20,24 +20,26 @@ To start the server run:
 
 ## Workflow
 
-The Session Roundtripper sample application demonstrates the following scenario:
+The sample application demonstrates the following scenario:
+
+The sample application demonstrates the following scenario:
 
 1. Authorizes the app using Three-Legged OAuth/2
 2. Upload a file to a Studio Project and then checks it out to a new Studio Session
-    * User Chooses a Project from a dropdown
+    * User Chooses a Project from a drop-down
     * User Specifies a Session Name
     * User browses for a File
     * User Clicks Create
-3. The backend application now does the following
+3. The back-end application now completes the following steps
     * Starts an upload to the Project which gets an AWS Upload URL
     * Uploads the file to AWS
     * Confirms the Upload in the Project
     * Creates a new Session
     * Checks out the file to the Session
-4. Users add markups to the file while it is in a Session
+4. Users adds markups to the file while it is in a Session
 5. User clicks 'Finish' button in application which then does the following
     * Sets the Session state to 'Finalizing' to kick everyone out of the Session
-    * Kicks off a process to generate a Snapshot of the file with the markups
+    * Kicks off a process to generate a snapshot of the file with the markups
     * Waits for the snapshot to finish
     * Downloads the snapshot
     * Deletes the Session
